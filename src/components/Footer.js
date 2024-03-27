@@ -1,38 +1,37 @@
 import React from 'react';
-import { Box, Text, Flex, IconButton, Link } from '@chakra-ui/react';
-import { EmailIcon, PhoneIcon } from '@chakra-ui/icons';
-import { LocationOn as LocationIcon } from '@material-ui/icons';
-import { Facebook as FacebookIcon, Twitter as TwitterIcon, Instagram as InstagramIcon } from '@material-ui/icons';
+import { Box, Grid, Text, Link } from '@chakra-ui/react';
+import { EmailIcon, PhoneIcon, ExternalLinkIcon } from '@chakra-ui/icons';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <Box bg="blue.500" py={6} color="white" textAlign="center">
-      <Text fontSize="lg" mb={4}>© 2024 SOIL - All rights reserved</Text>
-      <Flex justify="center" align="center" flexWrap="wrap">
-        <Box flexBasis={{ base: '100%', md: '50%' }} textAlign={{ base: 'center', md: 'left' }} mb={{ base: 4, md: 0 }}>
-          <Text fontSize="md">Contact Us:</Text>
-          <Flex align="center" mt={2}>
-            <LocationIcon mr={2} />
-            <Text fontSize="md">123 Organic Street, City, Country</Text>
-          </Flex>
-          <Flex align="center" mt={2}>
-            <EmailIcon mr={2} />
-            <Link href="mailto:info@example.com" fontSize="md">info@example.com</Link>
-          </Flex>
-          <Flex align="center" mt={2}>
-            <PhoneIcon mr={2} />
-            <Link href="tel:+1234567890" fontSize="md">+1 (234) 567-890</Link>
-          </Flex>
+    <Box bg="#212121" color="white" py={8} textAlign="center">
+      <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }} gap={8} justifyContent="center">
+        <Box>
+          <Text fontSize="xl" fontWeight="bold" mb={4}> SOIL - Organic Food Grocer</Text>
+          <Text fontSize="md">
+            Welcome to SOIL - Organic Food Grocer, your one-stop destination for the freshest organic produce. Explore our wide range of products and start living a healthier lifestyle today!
+          </Text>
         </Box>
-        <Box flexBasis={{ base: '100%', md: '50%' }} textAlign={{ base: 'center', md: 'right' }}>
-          <Text fontSize="md">Follow Us:</Text>
-          <Flex justify={{ base: 'center', md: 'flex-end' }} mt={2}>
-            <IconButton aria-label="Facebook" icon={<FacebookIcon />} color="white" bg="transparent" _hover={{ color: 'blue.300' }} />
-            <IconButton aria-label="Twitter" icon={<TwitterIcon />} color="white" bg="transparent" _hover={{ color: 'blue.300' }} />
-            <IconButton aria-label="Instagram" icon={<InstagramIcon />} color="white" bg="transparent" _hover={{ color: 'blue.300' }} />
-          </Flex>
+        <Box>
+          <Text fontSize="xl" fontWeight="bold" mb={4}>Useful Links</Text>
+          <Text fontSize="md">
+            <Link as={RouterLink} to="#" textDecoration="none" color="white" display="block" mb={2}>Affiliate</Link>          
+            <Link as={RouterLink} to="#" textDecoration="none" color="white" display="block" mb={2}>Privacy Policy</Link>
+            <Link as={RouterLink} to="#" textDecoration="none" color="white" display="block" mb={2}>Careers</Link>
+          </Text>
         </Box>
-      </Flex>
+        <Box>
+          <Text fontSize="xl" fontWeight="bold" mb={4}>Contact</Text>
+          <Text fontSize="md">
+            <Text mb={2}><ExternalLinkIcon mr={2} />Vauxhall Street, Union Place, USA</Text>
+            <Text mb={2}><EmailIcon mr={2} />soil@gmail.com</Text>
+            <Text mb={2}><PhoneIcon mr={2} />+94 11 90 2903</Text>
+            <Text><ExternalLinkIcon mr={2} />+94 33 78 9029</Text>
+          </Text>
+        </Box>        
+      </Grid>
+      <Text mt={8} fontSize="md">&copy; 2024 SOIL - All rights reserved</Text>      
     </Box>
   );
 };
