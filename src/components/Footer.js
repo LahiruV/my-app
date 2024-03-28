@@ -26,8 +26,8 @@ const Footer = () => {
           <Text fontSize="md">
             <Text mb={2}><ExternalLinkIcon mr={2} />Vauxhall Street, Union Place, USA</Text>
             <Text mb={2}><EmailIcon mr={2} />soil@gmail.com</Text>
-            <Text mb={2}><PhoneIcon mr={2} />+94 11 90 2903</Text>
-            <Text><ExternalLinkIcon mr={2} />+94 33 78 9029</Text>
+            <Text mb={2}><PhoneIcon mr={2} />+1 11 90 2903</Text>
+            <Text><ExternalLinkIcon mr={2} />+1 33 78 9029</Text>
           </Text>
         </Box>        
       </Grid>
