@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/react';
 import Footer from './Footer';
 import Nav from './Navbar';
+import Swal from 'sweetalert2';
+
 
 function Cart() {
     const [products, setProducts] = useState([]);
@@ -67,6 +69,19 @@ function Cart() {
         let totalPrice = cartItems.reduce((total, item) => total + item.price * item.qty, 0);
         setTotalPrice(totalPrice);
     }, [cartItems]);
+
+    const Payment = () => {
+        if (cartItems.length === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Your cart is empty!',
+                text: 'Please add items to your cart before proceeding to payment.',
+            });
+        } else {
+           window.location.href = "PaymentPage";
+        }
+    }
+    
 
     return (
         <Box>
@@ -149,7 +164,7 @@ function Cart() {
                         <Text>{totalPrice} $</Text>
                     </Flex>
                     <Button
-                        onClick={() => console.log("Place Order")}
+                        onClick={() => Payment()}
                         style={{
                             backgroundColor: "#3182ce",
                             color: "white",

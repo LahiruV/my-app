@@ -44,7 +44,10 @@ const PaymentPage = () => {
             text: 'Thank you for your payment!',
             icon: 'success',
             confirmButtonText: 'OK'
-        });
+        }).then(() => {
+            window.location.href = '/';
+        }
+        );        
     };
 
     return (
