@@ -14,8 +14,8 @@ const Navbar = () => {
         <NavLink to="/CartPage">Cart</NavLink>
         <NavLink to="/SmallScaleFarmingInfo">Small Scale Farming Info</NavLink>
         {/* <NavLink to="/Feedback">Feedback</NavLink>
-        <NavLink to="/Support">Support</NavLink>
-        <NavLink to="/Profile">Profile</NavLink> */}
+        <NavLink to="/Support">Support</NavLink> */}
+        <NavLink to="/Profile">Profile</NavLink>
         <NavLink to="/">LogOut</NavLink>
       </Flex>
     </Flex>
