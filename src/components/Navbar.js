@@ -3,6 +3,11 @@ import { Flex, Link, Text } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const handleLogout = () => {
+    localStorage.setItem('email', '');
+    window.location.href = '/';
+  };
+
   return (
     <Flex as="nav" align="center" justify="space-between" bg="#212121" p="4">
       <Link as={RouterLink} to="/" fontSize="2xl" fontWeight="bold" color="#FFA500" textDecoration="none">
@@ -15,15 +20,22 @@ const Navbar = () => {
         <NavLink to="/SmallScaleFarmingInfo">Small Scale Farming Info</NavLink>
         <NavLink to="/DietFeature">DietFeature</NavLink>
         <NavLink to="/Profile">Profile</NavLink>
-        <NavLink to="/">LogOut</NavLink>
+        <NavLink onClick={handleLogout}>Logout</NavLink>        
       </Flex>
     </Flex>
   );
 };
 
-const NavLink = ({ to, children }) => {
+const NavLink = ({ to, children, onClick }) => {
   return (
-    <Link as={RouterLink} to={to} color="#fff" mx="1rem" textDecoration="none">
+    <Link
+      as={RouterLink}
+      to={to}
+      color="#fff"
+      mx="1rem"
+      textDecoration="none"
+      onClick={onClick} 
+    >
       <Text fontSize="lg">{children}</Text>
     </Link>
   );

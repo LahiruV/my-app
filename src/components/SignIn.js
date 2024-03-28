@@ -41,6 +41,7 @@ const SignIn = () => {
         try {
             users = JSON.parse(storedData);
             localStorage.setItem('email', formData.email);
+            window.location.href = '/';
         } catch (error) {
             console.error('Error parsing user data:', error);
             Swal.fire({

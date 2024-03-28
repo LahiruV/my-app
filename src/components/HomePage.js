@@ -7,8 +7,8 @@ import NavBar from './NavbarLog';
 
 const HomePage = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('users')));
-
+  const user_mail = localStorage.getItem('email');
+  console.log(user_mail);
 
   const handlePrevSlide = () => {
     setActiveStep((prevStep) => (prevStep === 0 ? carouselImages.length - 1 : prevStep - 1));
@@ -63,7 +63,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {user ? (
+      {user_mail === '' ? (
         <NavBar />
       ) : (
         <Nav />
