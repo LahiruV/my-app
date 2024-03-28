@@ -26,8 +26,7 @@ const SignIn = () => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // Retrieve user data from localStorage
+        e.preventDefault();    
         const storedData = localStorage.getItem('users');
         if (!storedData) {
             Swal.fire({
@@ -50,8 +49,7 @@ const SignIn = () => {
                 text: 'Error parsing user data. Please try again.',
             });
             return;
-        }
-        // Check if user exists and credentials match
+        }        
         let isUserFound = false;
 
         const user = users;
@@ -64,8 +62,7 @@ const SignIn = () => {
                 icon: 'success',
                 title: 'Success!',
                 text: 'Login successful.',
-            });
-            // Clear form fields
+            });            
             setFormData({ email: '', password: '' });
         } else {
             Swal.fire({

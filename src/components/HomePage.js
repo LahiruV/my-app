@@ -39,7 +39,7 @@ const HomePage = () => {
       description: 'Description of Special Deal 2',
       price: '$24.99',
     },
-    // Add more special deals as needed
+  
   ];
 
   const productsData = [
@@ -57,7 +57,7 @@ const HomePage = () => {
       description: 'Description of Product 2',
       price: '$14.99',
     },
-    // Add more products as needed
+  
   ];
 
 
