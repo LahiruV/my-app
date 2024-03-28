@@ -7,6 +7,7 @@ import Specials from './components/Specials';
 import SmallScaleFarmingInfo from './components/SmallScaleFarmingInfo';
 import Cart from './components/Cart';
 import PaymentPage from './components/Payment';
+import DietFeature from './components/DietFeature';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/SmallScaleFarmingInfo" element={<SmallScaleFarmingInfo />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/PaymentPage" element={<PaymentPage />} />
+        <Route path="/DietFeature" element={<DietFeature />} />
        
       </Routes>
     </Router>
