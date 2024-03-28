@@ -40,6 +40,7 @@ const SignIn = () => {
         let users = [];
         try {
             users = JSON.parse(storedData);
+            localStorage.setItem('email', formData.email);
         } catch (error) {
             console.error('Error parsing user data:', error);
             Swal.fire({
