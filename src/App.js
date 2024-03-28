@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Specials from './components/Specials';
 import SmallScaleFarmingInfo from './components/SmallScaleFarmingInfo';
 import Cart from './components/Cart';
+import PaymentPage from './components/Payment';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Specials" element={<Specials />} />
         <Route path="/SmallScaleFarmingInfo" element={<SmallScaleFarmingInfo />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/PaymentPage" element={<PaymentPage />} />
        
       </Routes>
     </Router>
