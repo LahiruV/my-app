@@ -3,9 +3,12 @@ import { Box, Text, Grid, IconButton, Image, Button } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import Footer from './Footer';
 import Nav from './Navbar';
+import NavBar from './NavbarLog';
 
 const HomePage = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('users')));
+
 
   const handlePrevSlide = () => {
     setActiveStep((prevStep) => (prevStep === 0 ? carouselImages.length - 1 : prevStep - 1));
@@ -60,7 +63,11 @@ const HomePage = () => {
 
   return (
     <div>
-      <Nav />
+      {user ? (
+        <NavBar />
+      ) : (
+        <Nav />
+      )}
       <Box p={4}>
         <Text pt="60px" fontSize="50px" textAlign="center" fontWeight="bold">
           Welcome to SOIL - Organic Food Grocer

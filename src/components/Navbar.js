@@ -6,15 +6,14 @@ const Navbar = () => {
   return (
     <Flex as="nav" align="center" justify="space-between" bg="#212121" p="4">
       <Link as={RouterLink} to="/" fontSize="2xl" fontWeight="bold" color="#FFA500" textDecoration="none">
-      SOIL - Organic Food Grocer
+        SOIL - Organic Food Grocer
       </Link>
       <Flex align="center">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/Specials">Specials</NavLink>
         <NavLink to="/Cart">Cart</NavLink>
         <NavLink to="/SmallScaleFarmingInfo">Small Scale Farming Info</NavLink>
-        {/* <NavLink to="/Feedback">Feedback</NavLink>
-        <NavLink to="/Support">Support</NavLink> */}
+        <NavLink to="/DietFeature">DietFeature</NavLink>
         <NavLink to="/Profile">Profile</NavLink>
         <NavLink to="/">LogOut</NavLink>
       </Flex>
