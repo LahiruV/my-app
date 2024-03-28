@@ -5,13 +5,7 @@ import {
   FormControl,
   Text,
   Input,
-  Heading,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
+  Heading
 } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import Swal from 'sweetalert2';
