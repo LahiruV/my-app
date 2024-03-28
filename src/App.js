@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import Profile from './components/Profile';
 import Specials from './components/Specials';
 import SmallScaleFarmingInfo from './components/SmallScaleFarmingInfo';
+import Cart from './components/Cart';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Specials" element={<Specials />} />
         <Route path="/SmallScaleFarmingInfo" element={<SmallScaleFarmingInfo />} />
+        <Route path="/Cart" element={<Cart />} />
        
       </Routes>
     </Router>

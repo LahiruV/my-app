@@ -11,7 +11,7 @@ const Navbar = () => {
       <Flex align="center">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/Specials">Specials</NavLink>
-        <NavLink to="/CartPage">Cart</NavLink>
+        <NavLink to="/Cart">Cart</NavLink>
         <NavLink to="/SmallScaleFarmingInfo">Small Scale Farming Info</NavLink>
         {/* <NavLink to="/Feedback">Feedback</NavLink>
         <NavLink to="/Support">Support</NavLink> */}
