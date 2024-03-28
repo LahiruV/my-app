@@ -7,10 +7,13 @@ import {
     FormLabel,
     Input,
     Button,
+    Link,
+    Text
 } from '@chakra-ui/react';
 import Footer from './Footer';
-import Nav from './Navbar';
+import Nav from './NavbarLog';
 import Swal from 'sweetalert2';
+import { Link as RouterLink } from 'react-router-dom';
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -92,7 +95,14 @@ const SignUp = () => {
                     </Box>
                     <Button type="submit" size="lg" bg="#007bff" color="#fff" borderRadius="5px" _hover={{ bg: '#0056b3' }} sx={{ width: '100px', height: '40px' }}>Sign Up</Button>
                 </form>
-
+                <Box mt="20px" textAlign="center">
+                    <Text>
+                        Already have an account?{' '}
+                        <Link as={RouterLink} to="/signin" color="#007bff" fontWeight="bold">
+                            Sign in here.
+                        </Link>
+                    </Text>
+                </Box>
             </Container>
             <Footer />
         </div>

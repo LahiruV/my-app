@@ -9,14 +9,8 @@ const Navbar = () => {
       SOIL - Organic Food Grocer
       </Link>
       <Flex align="center">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/Specials">Specials</NavLink>
-        <NavLink to="/CartPage">Cart</NavLink>
-        <NavLink to="/SmallScaleFarmingInfo">Small Scale Farming Info</NavLink>
-        {/* <NavLink to="/Feedback">Feedback</NavLink>
-        <NavLink to="/Support">Support</NavLink>
-        <NavLink to="/Profile">Profile</NavLink> */}
-        <NavLink to="/">LogOut</NavLink>
+        <NavLink to="/">Home</NavLink>        
+        <NavLink to="/SignIn">Login</NavLink>
       </Flex>
     </Flex>
   );

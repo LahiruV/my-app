@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import {
     Container,
     Heading,
@@ -7,13 +7,15 @@ import {
     FormLabel,
     Input,
     Button,
+    Link,
 } from '@chakra-ui/react';
 import Footer from './Footer';
-import Nav from './Navbar';
+import Nav from './NavbarLog';
 import Swal from 'sweetalert2';
+import { Link as RouterLink } from 'react-router-dom';
 
 const SignIn = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         email: '',
         password: '',
     });
@@ -49,12 +51,12 @@ const SignIn = () => {
         }
         // Check if user exists and credentials match
         let isUserFound = false;
-       
-            const user = users;
-            if (user.email === formData.email && user.password === formData.password) {
-                isUserFound = true;                
-            }
-        
+
+        const user = users;
+        if (user.email === formData.email && user.password === formData.password) {
+            isUserFound = true;
+        }
+
         if (isUserFound) {
             Swal.fire({
                 icon: 'success',
@@ -76,7 +78,7 @@ const SignIn = () => {
         <div>
             <Nav />
 
-            <Container maxW="600px" mt="50px" p="20px" borderWidth="1px" borderRadius="5px" boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)" style={{ margin: '0 auto', marginBottom:'150px', marginTop: '150px', height: "350px" }}>
+            <Container maxW="600px" mt="50px" p="20px" borderWidth="1px" borderRadius="5px" boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)" style={{ margin: '0 auto', marginBottom: '150px', marginTop: '150px', height: "350px" }}>
                 <Heading textAlign="center" fontSize="28px" mb="20px">Sign In</Heading>
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Box mb="20px">
@@ -93,7 +95,10 @@ const SignIn = () => {
                     </Box>
                     <Button type="submit" size="lg" bg="#007bff" color="#fff" borderRadius="5px" _hover={{ bg: '#0056b3' }} sx={{ width: '100px', height: '40px' }}>Sign In</Button>
                 </form>
-
+                <Box mt="20px" textAlign="center">
+                    If you don't have an account, <Link as={RouterLink} to="/signup" color="#007bff" fontWeight="bold">Sign up here.
+                    </Link>
+                </Box>
             </Container>
             <Footer />
         </div>
