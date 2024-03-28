@@ -31,6 +31,7 @@ const Profile = () => {
     const handleDeleteClick = () => {
         localStorage.removeItem('users');
         setUser(null);
+        window.location.href = '/';
     };
 
     const date = new Date().toLocaleDateString();
