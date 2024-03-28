@@ -50,58 +50,60 @@ const PaymentPage = () => {
     return (
         <Container>
             <Nav />
-            <Heading as="h1" mb="20px" textAlign="center" fontSize="3xl" fontWeight="bold" color="blue.600">Payment Details</Heading>
-            <Box borderWidth="1px" borderRadius="lg" p="30px" textAlign="center" boxShadow="lg">
-                <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
-                    <Text fontSize="xl" fontWeight="bold" color="gray.700">Card Number</Text>
-                    <Input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
-                </FormControl>
-                <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
-                    <Text fontSize="xl" fontWeight="bold" color="gray.700">Expiry Date (MM/YYYY)</Text>
-                    <Input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
-                </FormControl>
-                <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
-                    <Text fontSize="xl" fontWeight="bold" color="gray.700">CVV</Text>
-                    <Input
-                        type="password"
-                        value={cvv}
-                        onChange={(e) => {
-                            const inputCVV = e.target.value.replace(/\D/g, '');
-                            if (inputCVV.length <= 3) {
-                                setCVV(inputCVV);
-                            }
+            <Box borderWidth="1px" borderRadius="lg" p="30px" textAlign="center" boxShadow="lg" borderColor="gray.200">
+                <Heading as="h1" mb="20px" textAlign="center" fontSize="3xl" fontWeight="bold" color="blue.600">Payment Details</Heading>
+                <Box borderWidth="1px" borderRadius="lg" p="30px" textAlign="center" boxShadow="lg">
+                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                        <Text fontSize="xl" fontWeight="bold" color="gray.700">Card Number</Text>
+                        <Input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
+                    </FormControl>
+                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                        <Text fontSize="xl" fontWeight="bold" color="gray.700">Expiry Date (MM/YYYY)</Text>
+                        <Input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                    </FormControl>
+                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                        <Text fontSize="xl" fontWeight="bold" color="gray.700">CVV</Text>
+                        <Input
+                            type="password"
+                            value={cvv}
+                            onChange={(e) => {
+                                const inputCVV = e.target.value.replace(/\D/g, '');
+                                if (inputCVV.length <= 3) {
+                                    setCVV(inputCVV);
+                                }
+                            }}
+                            inputMode="numeric"
+                            maxLength={3}
+                        />
+                    </FormControl>
+                    <Box mb="30px"> {/* Increase the margin bottom to add space */}
+                        <FontAwesomeIcon icon={faCcVisa} style={{ fontSize: '2em', marginRight: '10px' }} />
+                        <FontAwesomeIcon icon={faCcMastercard} style={{ fontSize: '2em' }} />
+                    </Box>
+                    {errorMessage && (
+                        <Text color="red.500" mb="20px">{errorMessage}</Text>
+                    )}
+                    <Button
+                        colorScheme="blue"
+                        onClick={handlePayment}
+                        fontSize="xl"
+                        fontWeight="bold"
+                        letterSpacing="wide"
+                        boxShadow="md"
+                        style={{
+                            padding: "10px 20px",
+                            borderRadius: "5px",
+                            backgroundColor: "#3182CE",
+                            color: "white",
+                            cursor: "pointer",
+                            transition: "background-color 0.3s",
                         }}
-                        inputMode="numeric"
-                        maxLength={3}
-                    />
-                </FormControl>
-                <Box mb="30px"> {/* Increase the margin bottom to add space */}
-                    <FontAwesomeIcon icon={faCcVisa} style={{ fontSize: '2em', marginRight: '10px' }} />
-                    <FontAwesomeIcon icon={faCcMastercard} style={{ fontSize: '2em' }} />
-                </Box>
-                {errorMessage && (
-                    <Text color="red.500" mb="20px">{errorMessage}</Text>
-                )}
-                <Button
-                    colorScheme="blue"
-                    onClick={handlePayment}
-                    fontSize="xl"
-                    fontWeight="bold"
-                    letterSpacing="wide"
-                    boxShadow="md"
-                    style={{
-                        padding: "10px 20px",
-                        borderRadius: "5px",
-                        backgroundColor: "#3182CE",
-                        color: "white",
-                        cursor: "pointer",
-                        transition: "background-color 0.3s",
-                    }}
-                    _hover={{ backgroundColor: "#2c5282" }}
-                >
-                    Pay Now
-                </Button>
+                        _hover={{ backgroundColor: "#2c5282" }}
+                    >
+                        Pay Now
+                    </Button>
 
+                </Box>
             </Box>
             <Footer />
         </Container>
