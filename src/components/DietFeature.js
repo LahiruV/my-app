@@ -67,6 +67,7 @@ const DietFeature = () => {
     const existingProfiles = JSON.parse(localStorage.getItem('profiles')) || [];
     existingProfiles.push(profile);
     localStorage.setItem('profiles', JSON.stringify(existingProfiles));
+    // localStorage.setItem('profiles', JSON.stringify([]));
 
     Swal.fire({
       icon: 'success',
