@@ -30,8 +30,7 @@ const Specials = () => {
     return (
         <div>
             <Nav />
-
-            <Container maxW="600px" mt="50px" p="20px" borderWidth="1px" borderRadius="5px" boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)" style={{ margin: '0 auto', marginBottom:'150px', marginTop: '150px', height: "auto" }}>
+            <Container maxW="600px" mt="50px" p="20px" borderWidth="1px" borderRadius="5px" boxShadow="0 2px 5px rgba(0, 0, 0, 0.1)" style={{ margin: '0 auto', marginBottom: '150px', marginTop: '150px', height: "auto" }}>
                 <Heading textAlign="center" fontSize="28px" mb="20px">Specials of the Week</Heading>
                 {specials.length > 0 ? (
                     specials.map((special, index) => (

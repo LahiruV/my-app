@@ -24,26 +24,26 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform form validation
+        
         if (!formData.name || !formData.email || !formData.password) {
             showError('Please fill in all fields.');
             return;
         }
-        // Perform email format validation
+        
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(formData.email)) {
             showError('Please enter a valid email address.');
             return;
         }
-        // Perform password strength validation (e.g., at least 8 characters)
+        
         if (formData.password.length < 8) {
             showError('Password must be at least 8 characters long.');
             return;
         }
-        // Save user details in localStorage
+        
         localStorage.setItem('users', JSON.stringify(formData));
         showSuccess('Registration successful');
-        // Clear form fields
+        
         setFormData({ name: '', email: '', password: '' });
     };
 

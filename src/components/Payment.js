@@ -56,15 +56,15 @@ const PaymentPage = () => {
             <Box borderWidth="1px" borderRadius="lg" p="30px" textAlign="center" boxShadow="lg" borderColor="gray.200">
                 <Heading as="h1" mb="20px" textAlign="center" fontSize="3xl" fontWeight="bold" color="blue.600">Payment Details</Heading>
                 <Box borderWidth="1px" borderRadius="lg" p="30px" textAlign="center" boxShadow="lg">
-                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                    <FormControl mb="30px"> 
                         <Text fontSize="xl" fontWeight="bold" color="gray.700">Card Number</Text>
                         <Input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
                     </FormControl>
-                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                    <FormControl mb="30px"> 
                         <Text fontSize="xl" fontWeight="bold" color="gray.700">Expiry Date (MM/YYYY)</Text>
                         <Input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
                     </FormControl>
-                    <FormControl mb="30px"> {/* Increase the margin bottom to add space */}
+                    <FormControl mb="30px"> 
                         <Text fontSize="xl" fontWeight="bold" color="gray.700">CVV</Text>
                         <Input
                             type="password"
@@ -79,7 +79,7 @@ const PaymentPage = () => {
                             maxLength={3}
                         />
                     </FormControl>
-                    <Box mb="30px"> {/* Increase the margin bottom to add space */}
+                    <Box mb="30px"> 
                         <FontAwesomeIcon icon={faCcVisa} style={{ fontSize: '2em', marginRight: '10px' }} />
                         <FontAwesomeIcon icon={faCcMastercard} style={{ fontSize: '2em' }} />
                     </Box>

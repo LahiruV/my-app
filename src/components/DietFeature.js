@@ -33,21 +33,18 @@ const DietFeature = () => {
     setProfile({ ...profile, healthGoals: goal });
   };
 
-  const generateMealPlan = () => {
-    // Simulate API call to fetch meal plan based on user preferences
+  const generateMealPlan = () => {    
     const generatedPlan = [
       { day: 'Monday', breakfast: 'Oatmeal', lunch: 'Salad', dinner: 'Grilled Chicken' },
       { day: 'Tuesday', breakfast: 'Smoothie', lunch: 'Quinoa Bowl', dinner: 'Fish Tacos' },
       { day: 'Wednesday', breakfast: 'Eggs', lunch: 'Grilled Vegetables', dinner: 'Salmon' },
       { day: 'Thursday', breakfast: 'Yogurt', lunch: 'Turkey Sandwich', dinner: 'Vegetable Stir-fry' },
-      { day: 'Friday', breakfast: 'Pancakes', lunch: 'Bean Burrito', dinner: 'Steak' },
-      // Add more meal plan items
+      { day: 'Friday', breakfast: 'Pancakes', lunch: 'Bean Burrito', dinner: 'Steak' },      
     ];
     setMealPlan(generatedPlan);
   };
 
-  const saveProfile = () => {
-    // Validate all fields
+  const saveProfile = () => {    
     if (
       !profile.age ||
       !profile.weight ||
@@ -58,12 +55,9 @@ const DietFeature = () => {
     ) {
       setErrorMessage('Please fill in all fields.');
       return;
-    }
-    // Simulate saving profile data to a database
-    // In a real application, you would make an API call to store the data
+    }        
     console.log('Saving profile:', profile);
-    alert('Profile saved successfully!');
-    // Clear error message
+    alert('Profile saved successfully!');    
     setErrorMessage('');
   };
 

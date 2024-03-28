@@ -21,8 +21,7 @@ function Cart() {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
 
-    useEffect(() => {
-        // Dummy product data
+    useEffect(() => {        
         const dummyProducts = [
             {
                 id: 1,
