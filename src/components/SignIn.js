@@ -19,6 +19,8 @@ const SignIn = () => {
         email: '',
         password: '',
     });
+    localStorage.setItem('profiles', JSON.stringify([]));
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
